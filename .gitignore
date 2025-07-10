@@ -1,0 +1,9 @@
+# Ignore virtual environments inside subfolders
+*/venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VSCode settings
+.vscode/
