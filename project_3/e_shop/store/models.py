@@ -12,7 +12,10 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     in_stock = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
+
+
 
