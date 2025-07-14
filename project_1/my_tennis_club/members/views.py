@@ -1,6 +1,11 @@
 from django.template import loader
 from django.http import HttpResponse
+from .models import Members
 
 def members(request):
-    template = loader.get_template('myfirst.html')
-    return HttpResponse(template.render())
+    mymembers = Members.objects.all().values
+    template = loader.get_template('all_members.html')
+    context = {
+        'mymembers':mymembers,
+    }
+    return HttpResponse(template.render(context, request))
